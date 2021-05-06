@@ -2,7 +2,7 @@ settings:
   title: 'Status Page'
   url: 'https://status.kabir.workers.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 60 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -15,9 +15,9 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: dash-kube-eu-oeg # unique identifier
+  - id: dash-kube-eu-org # unique identifier
     name: Kubernetes Dashboard (Home)
-    description: 'Dashboard for Home Kubernetes Cluster' # default=empty
+    # description: 'Dashboard for Home Kubernetes Cluster' # default=empty
     url: 'https://dash.kube.eu.org' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
@@ -25,26 +25,16 @@ monitors:
 
   - id: home-kwatra-me
     name: Home Assistant
-    description: 'Free and Open-Source home automation software'
     url: 'https://home.kwatra.me'
-    method: GET
-    expectStatus: 200
 
   - id: pm-kwatra-me
     name: Bitwarden Stable
     url: 'https://pm.kwatra.me'
-    method: GET
-    expectStatus: 200
     
   - id: bw-kwatra-me
     name: Bitwarden Canary
     url: 'https://bw.kwatra.me'
-    method: GET
-    expectStatus: 200
     
   - id: photo-kwatra-me
     name: Photoprism
-    description: 'Photo Hosting'
     url: 'https://photos.kwatra.me'
-    method: GET
-    expectStatus: 200
